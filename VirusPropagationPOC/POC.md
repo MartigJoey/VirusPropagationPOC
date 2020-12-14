@@ -3,7 +3,7 @@
 Aucun nécessaire en plus de celui déjà présent dans les postes techniciens.
 ## Technologie
 ### Grand nombre d'entités
-[Microsoft ASP.NET](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application)
+[https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application)
 
 ### Propagation
 En couplant un grand nombre d'entité avec une propagation liées à ces individus, je crains que les performances soient très impactées par la façon dont j'ai imaginé la propagation.
@@ -15,17 +15,11 @@ SQL
 [https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx](https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx)
 
 ### Affichage
-#### Graphiques
-
-Utilisation du framework LiveCharts.
-[Graphiques](https://lvcharts.net/App/notfound)
+#### Graphique
+Tester en WPF
+[https://dotnet.highcharts.com/Highcharts/Demo/Docs?section=WFFirstChart3](https://dotnet.highcharts.com/Highcharts/Demo/Docs?section=WFFirstChart3)
 
 ### Carte
 
 #### Template
-#### Données
-les données des cartes peuvent être téléchargée depuis ce git
-[Maps.xml](https://github.com/Live-Charts/Live-Maps/tree/master/Maps)
-
-![Maps.xml](Maquette.png)
-
+[https://www.highcharts.com/demo/maps/all-maps/dark-unica](https://www.highcharts.com/demo/maps/all-maps/dark-unica)
