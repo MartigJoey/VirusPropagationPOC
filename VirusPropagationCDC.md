@@ -70,7 +70,7 @@ l'affichage.
 <br><br>
 L'utilisateur a accès à de nombreux paramètre permettant de modifier la poplulation d'individus. Il peut créer plusieurs populations différentes dans la même simulation ayant des paramètres personnalisés ou identiques. Il est possible que les populations aient des contacts, il est aussi possible de les isolés. Les mesures contre le virus sont liées à la population et peuvent donc elles-aussi varié en fonction de la population.
 <br><br>
-Le virus peut aussi être modifié par l'utilisateur. Son niveau de dangerosité et létalité ainsi que son ou ses moyens de propagations peuvent être modifié.
+Le virus peut aussi être modifié par l'utilisateur. Son niveau de létalité ainsi que son ou ses moyens de propagations peuvent être modifié.
 <br><br>
 L'affichage est presque entièrement personnalisé par l'utilisateur. Il décide quel graphique ou carte est affiché. La carte peut contenir des régions. Ces régions possèdeent une population et change de couleur en fonction de leurs états (% d'infecté, de rétablis, etc...). Les graphiques eux sont des graphiques en courbes permettant l'affichage de plusieurs données. Leurs données sont totalement personalisables. Il peuvent afficher les données de toutes la populations, afficher les données de différentes populations, comparer celles-ci, visualiser l'avancement du virus, etc...
 

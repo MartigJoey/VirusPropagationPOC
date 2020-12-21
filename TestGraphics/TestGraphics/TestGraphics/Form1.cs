@@ -15,12 +15,17 @@ namespace TestGraphics
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ChartValues<double> values = new ChartValues<double> { 1, 2, 3, 100, 1000};
+            ChartValues<double> values1 = new ChartValues<double> { 1, 2, 3, 100, 1000};
+            ChartValues<double> values2 = new ChartValues<double> { 1000, 100, 3, 2, 1};
 
             chart.Series = new SeriesCollection { 
                 new LineSeries
                 {
-                    Values = values
+                    Values = values1,
+                },
+                new LineSeries
+                {
+                    Values = values2,
                 }
             };
 
