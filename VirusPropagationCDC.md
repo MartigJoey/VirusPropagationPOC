@@ -119,7 +119,7 @@ Je relance la simulation et observe la différence entre les deux simulations. <
 https://docs.google.com/spreadsheets/d/1tSpIbcDVvGnzMhEN71UDwPOxEy0oapQSSbxzjqXt3RA/edit?usp=sharing
 
 # 11. Diagramme de classe initial
-![Diagramme de classe initial](DiagrammeDactivite.png)
+![Diagramme de classe initial](InitialClassDiagram.png)
 <p style="text-align: center">Figure 4: Diagrame de classe initial</p>
 
 # Preuve de concept
