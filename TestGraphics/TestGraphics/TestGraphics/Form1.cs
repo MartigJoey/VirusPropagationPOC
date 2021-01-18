@@ -43,7 +43,7 @@ namespace TestGraphics
 
             LiveCharts.WinForms.GeoMap geoMap1 = new LiveCharts.WinForms.GeoMap();
 
-            Dictionary<string, double> valuesMap = new Dictionary<string, double>();
+            /*Dictionary<string, double> valuesMap = new Dictionary<string, double>();
             Random r = new Random();
 
             for (int i = 2; i <= 20; i++)
@@ -61,7 +61,7 @@ namespace TestGraphics
             geoMap1.LandClick += Map_LandClick;
 
             groupBox1.Controls.Add(geoMap1);
-            geoMap1.Dock = DockStyle.Fill;
+            geoMap1.Dock = DockStyle.Fill;*/
         }
 
         private void Map_LandClick(object arg1, LiveCharts.Maps.MapData arg2)
