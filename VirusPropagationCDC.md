@@ -161,7 +161,7 @@ les données des cartes peuvent être téléchargée depuis ce git: <br>
 |Modifier l'affichage|- **`Quoi`** ? Modifier l'affichage comme par exemple quels graphiques seront affichés<br>- **`Qui`** ? L'utilisateur<br>- **`Où`** ? Dans l'onglet paramètre de l'application<br>- **`Quand`** ? Avant de lancer une simulation et/ou lorsque la simulation est lancée pour certains paramètres<br>- **`Comment`** ? En sélectionnant les options proposée<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Pour permettre à l'utilisateur d'avoir un visuel intéressant ainsi que des données qui lui sont importantes<br>|
 |Générer la population|- **`Quoi`** ? Générer la population avec les paramètres choisis par l'utilisateur<br>- **`Qui`** ? L'application<br>- **`Où`** ? En BackEnd et dans l'affichage, une fois que la génération est terminée<br>- **`Quand`** ? Lorsque l'utilisateur décide de lancer la simulation<br>- **`Comment`** ? En générant cahque individus demandé par l'utilisateur avec des valeurs aléatoires, tous en restant dans les limites définient par l'utilisateur<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car il est indispensable de simuler des individus pour une simulation de propagation de virus<br>|
 |Générer le virus|- **`Quoi`** ? Générer le virus avec les paramètres choisis par l'utilisateur<br>- **`Qui`** ? L'application<br>- **`Où`** ? En BackEnd et dans l'affichage, une fois que la génération est terminée<br>- **`Quand`** ? Lorsque l'utilisateur décide de lancer la simulation<br>- **`Comment`** ? En assignant le virus à un ou plusieurs individus au démarage de la simulation<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car il est indispensable de simuler un virus dans une simulation de propagation de virus<br>|
-|Afficher la simulation|- **`Quoi`** ? Afficher la population ainsi que le virus dans une carte et/ou dans les graphiques choisis par l'utilisateur<br>- **`Qui`** ? L'application<br>- **`Où`** ? Sur la page principale de l'application<br>- **`Quand`** ? Une fois que la simulation a fini d'être généré<br>- **`Comment`** ? En utilisant des graphiques et une carte permettant d'informer l'utilisateur sur le nombre d'infecté ou sur les données qu'il a choisi d'afficher<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car il est imporant d'avoir un retour en direct de ce qu'il se passe dans la simulation<br>|
+|Afficher la simulation|- **`Quoi`** ? Afficher la population ainsi que le virus dans une interface graphique et/ou dans les graphiques choisis par l'utilisateur<br>- **`Qui`** ? L'application<br>- **`Où`** ? Sur la page principale de l'application<br>- **`Quand`** ? Une fois que la simulation a fini d'être généré<br>- **`Comment`** ? En utilisant des graphiques et une interface graphique permettant d'informer l'utilisateur sur le nombre d'infecté ou sur les données qu'il a choisi d'afficher<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car il est imporant d'avoir un retour en direct de ce qu'il se passe dans la simulation<br>|
 |Le virus doit se propager|- **`Quoi`** ? Le virus se transmet d'un individu à un autre en fonction des paramètres choisis<br>- **`Qui`** ? L'application<br>- **`Où`** ? En backend ainsi que dans les graphique par extension<br>- **`Quand`** ? De façon aléatoir en fonction des paramètres choisis par l'utilisateur une fois que la simulation est lancée<br>- **`Comment`** ? La méthode est encore incertaine<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car il est indispensable de simuler la propagation d'un virus dans une simulation de propagation de virus<br>|
 |Les individus sont affecté par le virus|- **`Quoi`** ? Les individus ont des symptômes, meurent, où se rétablissent dû au virus<br>- **`Qui`** ? L'application<br>- **`Où`** ? En backend et frontEnd<br>- **`Quand`** ? Lorsque la simulation est lancée. Arrive de façon aléatoir en fonction des paramètres de l'utilisateur<br>- **`Comment`** ? En réduisant leur santé d'une façon ou d'une autre ou simplement en supprimant l'entité infecté lorsqu'elle "meurt"<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car certains virus peuvent modifier le comportement ou l'état de santé d'une personne, il est important de le reproduire<br>|
 |Les données sont sauvegardée dans la BDD|- **`Quoi`** ? Les données résultantes de la simulation tel que le nombre de rétablis sont sauvegardé dans une base de donnée local<br>- **`Qui`** ? La BDD<br>- **`Où`** ? <br>- **`Quand`** ? Lorsqu'une simulation se termine<br>- **`Comment`** ? En récupérant les données résultantes de la simulation et en les sauvegardant dans une Base de données local<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car certaines données peuvent être utilent et il est important de garder une trace de celle-ci<br>|
@@ -169,7 +169,8 @@ les données des cartes peuvent être téléchargée depuis ce git: <br>
 |Les hôpitaux ont une limite|- **`Quoi`** ? Les hôpitaux se remplissent jusqu'à une limite maximal et arrêtent de prendre des patients<br>- **`Qui`** ? L'application<br>- **`Où`** ? Backend, frontend<br>- **`Quand`** ? Lorsque la limite d'individus est trop grande dans un hôpital (valeur fixe)<br>- **`Comment`** ? Simplemen en donnant une valeur maximale de patient par hôpital<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car les hôpitaux ne peuvent prendre un nombre infinis de patients<br>|
 
 <h1>Graphique radar pour le virus</h1>
-https://www.google.com/search?q=simulation+individu-centr%C3%A9&safe=strict&hl=fr&sxsrf=ALeKk02i1JrfYG4BydYqWTTmyPzPVs2aHg:1608542929961&source=lnms&sa=X&ved=0ahUKEwiiyciv4d7tAhVR26QKHaOcBOIQ_AUICigA&biw=1920&bih=969&dpr=1
+
+[Radar](https://www.google.com/search?q=simulation+individu-centr%C3%A9&safe=strict&hl=fr&sxsrf=ALeKk02i1JrfYG4BydYqWTTmyPzPVs2aHg:1608542929961&source=lnms&sa=X&ved=0ahUKEwiiyciv4d7tAhVR26QKHaOcBOIQ_AUICigA&biw=1920&bih=969&dpr=1)
 
 # Interactions
 ## Menu principal
@@ -186,22 +187,9 @@ https://www.google.com/search?q=simulation+individu-centr%C3%A9&safe=strict&hl=f
 
 ## Population
 Affiche une page avec les paramètres suivant :
-- Changer le nom de la population
-- Ajouter une population
-  - Ajoute une population ayant les paramètres par défaut à la liste de populations et l'affiche
-- Supprimer une population
-  - Supprime la population sélectionnée et affiche la précédente
-- Copier les paramètres
-  - Copie les paramètres de la population actuelle en mémoire (Ou simplement un index)
-- Coller les paramètres
-  - Colle les paramètres copié dans la population sélectionnée (Ou clone la population copiée)
-- Appliquer les paramètres à toutes les populations
-  - Applique les paramètres de la population actuelle à toutes les populations crées
-
 - Moyenne d'âge de la population
   - Permet de modifier la moyenne d'âge de la population de 1 à ~100
   - Permet de délimiter une limite d'âge maximal et minimal
-  - Il peut y avoir plusieurs moyennes en choisissant quelle moyenne correspond à quel pourcentage de la population
   - Il est possible de le laisser en aléatoire
 - Maladies impactant la population
   - Permet de sélectionner un vaste choix de maladies et d'y indiquer le nombre de la population "infectée"
@@ -265,12 +253,6 @@ Affiche une page avec les paramètres suivant :
 
 ## Affichage
 Affiche une page avec les paramètres suivant :
-- Carte
-  - Permet de sélectionner ou d'importer une carte au format xml
-  - La carte s'affiche
-  - Les régions s'affichent
-    - Attributions des populations à chaque régions
-  - Une seule par simulation
 - Graphiques
   - Permet de sélectionner différents styles de graphiques à afficher
     - Permet de sélectionner une donnée au choix en X et en Y
@@ -281,30 +263,7 @@ Affiche une page avec les paramètres suivant :
 Affiche une page :
 - Affichage d'une barre de chargement lors de la génération de la simulation
   - Évolue en fonction du nombre d'individus créé
-- Affiche les graphiques sélectionné ainsi que la carte
+- Affiche les graphiques sélectionné
   - Onglets permettant de sélectionner quel graphique afficher
   - Possibilité d'afficher jusqu'à 4 graphiques sur le même onglet
-- S'actualise toutes les secondes
-- Carte
-  - La couleur des régions change en fonction du nombre d'infecté
-  - En cliquant sur une région, une popup s'affiche
-    - Nombre d'individus
-    - Nombre d'infectés
-    - Nombre de rétablis
-    - État général
-      - Hôpitaux
-      - Mesures
-- Modification des paramètres
-  - Presque tous les parampètres sont accessibles en temps réel
-    - les modification d'individus ne sont pas possible en temps réel
-    - Ils sont modifiables mais nécessite un rechargement de la simulation
-  - pause de la simulation
-
-# 13. Livrables
-- Mind Map
-- Planning
-- Rapport de projet
-- Manuel utilisateur
-- Journal de travail ou LogBook
-- Résumé / Abstract
-
+- S'actualise toutes les secondes (environ)
