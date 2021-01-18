@@ -31,7 +31,7 @@ namespace AlphaVP
                 float tRdm = (float)rdm.Next(0, 100) + (float)rdm.NextDouble(); // ?
                 if (tRdm <= chancesOfInfection)
                 {
-                    Console.WriteLine(tRdm);
+                    // Console.WriteLine(tRdm);
                     state = PersonState.Infected;
                 }
             }

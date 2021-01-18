@@ -9,19 +9,21 @@ namespace AlphaVP
     class Location
     {
         List<Person> persons = new List<Person>();
+        Virus virus = new Virus();
         float chancesOfInfection = 0;
 
         public float ChancesOfInfection { get => chancesOfInfection; set => chancesOfInfection = value; }
 
-        public Location()
+        public Location(Virus virus)
         {
-            // Does nothing
+            this.virus = virus;
         }
 
         public void Action()
         {
-            ChancesOfInfection = (float)GetNumberInfected() / 10f; // Super temporaire à coupler avec le virus
-            Console.WriteLine("Virus: " + ChancesOfInfection);
+            ChancesOfInfection = (float)GetNumberInfected() * virus.Propagation; // Super temporaire à coupler avec le virus
+
+            // Console.WriteLine("Virus: " + ChancesOfInfection);
             Parallel.For(0, persons.Count, i => {
                 if (persons[i].State != PersonState.Infected && persons[i].State != PersonState.HealthyCarrier)
                 {

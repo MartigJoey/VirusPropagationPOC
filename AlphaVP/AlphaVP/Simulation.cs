@@ -16,27 +16,32 @@ namespace AlphaVP
 
     class Simulation
     {
-        List<Person> persons = new List<Person>();
-        Location location = new Location();
+        List<Person> persons;
+        List<Location> locations;
+        Virus virus;
+        Location location;
         Random rdm = new Random();
         public Simulation(int nbPersons)
         {
-            for (int i = 0; i < nbPersons; i++)
-            {
-                Person person;
-                if (i == 0) 
-                    person = new Person(rdm, PersonState.Infected);
-                else 
-                    person = new Person(rdm);
+            int nbLocations = 5;
 
-                persons.Add(person);
-                location.AddPerson(person);
+            persons = new List<Person>();
+            locations = new List<Location>();
+            virus = new Virus();
+
+            for (int i = 0; i < nbLocations; i++)
+            {
+                location = new Location(virus);
+                CreateLocation(nbPersons / nbLocations, location);
+                locations.Add(location);
             }
+            
         }
+
 
         public void Action()
         {
-            location.Action();
+            locations.AsParallel().ForAll(x => x.Action());
         }
 
         public int CalculateNbPersons()
@@ -46,7 +51,27 @@ namespace AlphaVP
 
         public int CalculateNbInfected()
         {
-            return location.GetNumberInfected();
+            return locations.Sum(x => x.GetNumberInfected());
+        }
+
+        public List<int> GetNbInfectedByLocation()
+        {
+            return locations.Select(x => x.GetNumberInfected()).ToList();
+        }
+
+        private void CreateLocation(int nbPersons, Location pLocation)
+        {
+            for (int i = 0; i < nbPersons; i++)
+            {
+                Person person;
+                if (i == 0)
+                    person = new Person(rdm, PersonState.Infected);
+                else
+                    person = new Person(rdm);
+
+                persons.Add(person);
+                pLocation.AddPerson(person);
+            }
         }
     }
 }
