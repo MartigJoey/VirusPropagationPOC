@@ -37,12 +37,13 @@
             this.lblNbDeath = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pcbVisual = new System.Windows.Forms.PictureBox();
+            this.tbxData = new System.Windows.Forms.TextBox();
+            this.btnPlayBreak = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVisual)).BeginInit();
             this.SuspendLayout();
             // 
             // time
             // 
-            this.time.Enabled = true;
             this.time.Interval = 1000;
             this.time.Tick += new System.EventHandler(this.time_Tick);
             // 
@@ -110,15 +111,36 @@
             // 
             this.pcbVisual.Location = new System.Drawing.Point(217, 9);
             this.pcbVisual.Name = "pcbVisual";
-            this.pcbVisual.Size = new System.Drawing.Size(397, 363);
+            this.pcbVisual.Size = new System.Drawing.Size(560, 363);
             this.pcbVisual.TabIndex = 6;
             this.pcbVisual.TabStop = false;
+            this.pcbVisual.Paint += new System.Windows.Forms.PaintEventHandler(this.VisualPaint);
+            // 
+            // tbxData
+            // 
+            this.tbxData.Location = new System.Drawing.Point(14, 91);
+            this.tbxData.Multiline = true;
+            this.tbxData.Name = "tbxData";
+            this.tbxData.Size = new System.Drawing.Size(160, 252);
+            this.tbxData.TabIndex = 7;
+            // 
+            // btnPlayBreak
+            // 
+            this.btnPlayBreak.Location = new System.Drawing.Point(14, 349);
+            this.btnPlayBreak.Name = "btnPlayBreak";
+            this.btnPlayBreak.Size = new System.Drawing.Size(160, 23);
+            this.btnPlayBreak.TabIndex = 8;
+            this.btnPlayBreak.Text = "Play/Pause";
+            this.btnPlayBreak.UseVisualStyleBackColor = true;
+            this.btnPlayBreak.Click += new System.EventHandler(this.PlayBreak_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 384);
+            this.ClientSize = new System.Drawing.Size(789, 384);
+            this.Controls.Add(this.btnPlayBreak);
+            this.Controls.Add(this.tbxData);
             this.Controls.Add(this.pcbVisual);
             this.Controls.Add(this.lblNbDeath);
             this.Controls.Add(this.label4);
@@ -126,7 +148,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNbPerson);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
             this.Text = "Alpha Virus propagation";
             this.Load += new System.EventHandler(this.FrmMain_Load);
@@ -146,6 +168,8 @@
         private System.Windows.Forms.Label lblNbDeath;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pcbVisual;
+        private System.Windows.Forms.TextBox tbxData;
+        private System.Windows.Forms.Button btnPlayBreak;
     }
 }
 

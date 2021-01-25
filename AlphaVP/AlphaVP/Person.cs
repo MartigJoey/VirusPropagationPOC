@@ -10,28 +10,40 @@ namespace AlphaVP
     {
         PersonState state = PersonState.Healthy;
         Random rdm;
+        Measure measureMask;
 
-        public Person(Random rdm)
+        public Person(Random rdm, Measure measureMask)
         {
             this.rdm = rdm;
+            this.measureMask = measureMask;
         }
 
-        public Person(Random rdm, PersonState state)
+        public Person(Random rdm, Measure measureMask, PersonState state)
         {
             this.state = state;
             this.rdm = rdm;
+            this.measureMask = measureMask;
         }
 
         public PersonState State { get => state; }
 
+        /// <summary>
+        /// Effectue une itération sur une personne. En effectuant un mouvement (Par exemple) et en calculant les chances qu'il a d'attraper le virus.
+        /// </summary>
+        /// <param name="chancesOfInfection">Chance d'être infecté par le virus pour cette itération</param>
+        /// <returns>Retourne l'état de la personne</returns>
         public PersonState Action(float chancesOfInfection)
         {
-            if (state != PersonState.Dead)
+            if (state == PersonState.Healthy)
             {
-                float tRdm = (float)rdm.Next(0, 100) + (float)rdm.NextDouble(); // ?
-                if (tRdm <= chancesOfInfection)
+                float randomChances = (float)rdm.Next(0, 100) + (float)rdm.NextDouble(); // Probabilité d'attraper le virus.
+                chancesOfInfection -= measureMask.Protection; // Chances d'être infecté par le virus.
+
+                if (chancesOfInfection < 0)
+                    chancesOfInfection = 0;
+
+                if (randomChances <= chancesOfInfection)
                 {
-                    // Console.WriteLine(tRdm);
                     state = PersonState.Infected;
                 }
             }
