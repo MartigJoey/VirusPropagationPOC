@@ -12,9 +12,16 @@ La propagation se fera entre individus se trouvant dans un même lieu. Suivant l
 SQL
 [https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx](https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx)
 
-Possible source de données
-[https://covid19risk.biosci.gatech.edu/](https://covid19risk.biosci.gatech.edu/)
+Possible source de données <br>
+[https://covid19risk.biosci.gatech.edu/](Map)
 
+[Math et autres](https://link.springer.com/article/10.1007/s00466-020-01881-7)
+
+[Propagation général](https://www.sciencedirect.com/science/article/pii/S2468042720300087)
+
+[Efficacité masque](https://aip.scitation.org/doi/10.1063/10.0002919)
+
+[Simulation germes](https://www.ansys.com/about-ansys/covid-19-simulation-insights)
 ### Difficultées
 
 #### Structure
