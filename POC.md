@@ -88,6 +88,11 @@ Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de cr
 
 ## Population
 Affiche une page avec les paramètres suivant :
+- Écoles
+  - Différentes selon l'âge
+  - Zone de transmission
+- Familles / Cercles d'amis
+  - Transmission
 - Moyenne d'âge de la population
   - Permet de modifier la moyenne d'âge de la population de 1 à ~100
   - Permet de délimiter une limite d'âge maximal et minimal
