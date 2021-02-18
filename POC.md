@@ -9,6 +9,8 @@ Aucun nécessaire en plus de celui déjà présent dans les postes techniciens.
 
 La propagation se fera entre individus se trouvant dans un même lieu. Suivant les chances d'infection qui seront définient par le virus, les mesures ainsi que par le nombre d'individus infecté dans un espace, les chances d'infection diminueront ou augmenteront à chaque itérations. 
 
+https://github.com/ExpDev07/coronavirus-tracker-api
+
 SQL
 [https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx](https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx)
 
