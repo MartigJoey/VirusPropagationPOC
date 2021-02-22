@@ -9,18 +9,21 @@ Aucun nécessaire en plus de celui déjà présent dans les postes techniciens.
 
 La propagation se fera entre individus se trouvant dans un même lieu. Suivant les chances d'infection qui seront définient par le virus, les mesures ainsi que par le nombre d'individus infecté dans un espace, les chances d'infection diminueront ou augmenteront à chaque itérations. 
 
-SQL
-[https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx](https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx)
+~~SQL
+[https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx](https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx)~~
 
 Possible source de données <br>
-[Map](https://covid19risk.biosci.gatech.edu/)
+~~[Map](https://covid19risk.biosci.gatech.edu/)~~
 
-[Source de données au niveau des molécules](https://link.springer.com/article/10.1007/s00466-020-01881-7)
+[Simulation de molécules](https://link.springer.com/article/10.1007/s00466-020-01881-7)
 
-[Propagation général au niveau de pays](https://www.sciencedirect.com/science/article/pii/S2468042720300087)
+[Propagation niveau de pays](https://www.sciencedirect.com/science/article/pii/S2468042720300087)
 
 [Efficacité masque](https://aip.scitation.org/doi/10.1063/10.0002919)
 [-Source](https://aip.scitation.org/doi/10.1063/5.0035414)
+<br>
+<br>
+Source des données mathématique concernant la propagation :
 
 [Simulation mathématique (excel) de différent lieux et paramétrable](https://drive.google.com/file/d/1ZWG4LslRBUjMC00Rsi65TKmfVJyzVUf2/view?usp=sharing)
 ### Difficultées
@@ -42,7 +45,11 @@ Les graphiques en eux même ne me semblent pas être un problème vu la simplici
 ### Affichage
 
 Utilisation du framework LiveCharts.
-[Graphiques](https://lvcharts.net/App/notfound)
+[Graphiques](https://lvcharts.net/App/examples/wpf/start)
+
+Graphique radar pour le virus:
+
+[Radar](https://www.google.com/search?q=graphique+radar&tbm=isch&ved=2ahUKEwiBrPbShf3uAhVBexoKHXafBQQQ2-cCegQIABAA&oq=graphique+radar&gs_lcp=CgNpbWcQARgAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoFCAAQsQM6BAgAEEM6BAgAEAM6BAgAEApQ9h1Yrz1g8j5oAHAAeACAAXuIAdkGkgEEMTMuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=QmczYIGDG8H2afa-liA&bih=969&biw=1920&safe=strict&hl=fr)
 
 ### Graphiques
 
@@ -69,10 +76,6 @@ Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de cr
 |Les hôpitaux se remplissent|- **`Quoi`** ? Les individus infectés sont traités dans les hôpitaux<br>- **`Qui`** ? L'application<br>- **`Où`** ? Backend, frontend<br>- **`Quand`** ? Lorsque des maladent souffrent de certains symptômes<br>- **`Comment`** ? Simplement en assignant certains malades aux hôpitaux<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car c'est une variable importante qui peut permettre à rendre le résultat plus réaliste<br>|
 |Les hôpitaux ont une limite|- **`Quoi`** ? Les hôpitaux se remplissent jusqu'à une limite maximale et arrêtent de prendre des patients<br>- **`Qui`** ? L'application<br>- **`Où`** ? Backend, frontend<br>- **`Quand`** ? Lorsque la limite d'individus est trop grande dans un hôpital (valeur fixe)<br>- **`Comment`** ? Simplement en donnant une valeur maximale de patient par hôpital<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car les hôpitaux ne peuvent prendre un nombre infini de patients<br>|
 
-<h1>Graphique radar pour le virus</h1>
-
-[Radar](https://www.google.com/search?q=simulation+individu-centr%C3%A9&safe=strict&hl=fr&sxsrf=ALeKk02i1JrfYG4BydYqWTTmyPzPVs2aHg:1608542929961&source=lnms&sa=X&ved=0ahUKEwiiyciv4d7tAhVR26QKHaOcBOIQ_AUICigA&biw=1920&bih=969&dpr=1)
-
 # Interactions
 ## Menu principal
 - Affiche un preview de l'affichage de la simulation
@@ -91,10 +94,7 @@ Affiche une page avec les paramètres suivant :
 - Moyenne d'âge de la population
   - Permet de modifier la moyenne d'âge de la population de 1 à ~100
   - Permet de délimiter une limite d'âge maximal et minimal
-  - Il est possible de le laisser en aléatoire
-- Maladies impactant la population
-  - Permet de sélectionner un vaste choix de maladies et d'y indiquer le nombre de la population "infectée"
-  - Elles ne se propagent pas
+  - Il est possible de le laisser par défaut
 - Nombre d'individus
   - Le nombre d'individus simulé dans une population
   - La limite n'est pas définie par le programme
@@ -106,12 +106,20 @@ Affiche une page avec les paramètres suivant :
     - Affecte différemment le virus en fonction de la mesure
     - Pourrait totalement contrer un virus
   - Peut être modifier par l'utilisateur jusqu'à un niveau de 100% de protection
+  - Valeur par défaut défini par des études sur le sujet
   - Appliquer uniquement sur certaines parties de la population
     - Infectés
     - Sains
     - À risques
-- Hôpitaux
-  - Comme pour les populations, il y a plusieurs hôpitaux avec les options :
+- Cercle social
+  - Ami
+  - Famille
+  - Collègues
+  - ...
+  - Transmissions accru
+  - Rencontres inclussent dans le planning journalier des individus
+- Hôpitaux / écoles / lieux de travail
+  - Il y a plusieurs hôpitaux avec les options :
     - Copier
     - Coller
     - Appliquer sur tout
@@ -128,22 +136,16 @@ Affiche une page avec les paramètres suivant :
         - Pourrait totalement contrer un virus
       - Peut être modifier par l'utilisateur jusqu'à un niveau de 100% de protection
 - Btn annuler
-  - Annule les modifications faites à la population
+  - Annule les modifications faites à l'hôpital
   - Réaffiche les données précédemment affichées
 - Btn sauvegarder
   - Sauvegarde les paramètres choisis par l'utilisateur
 ## Virus
-[Moyen de transmissions](https://www.virologie-uclouvain.be/fr/chapitres/transmission-epidemiologie/transmission-des-virus)
-
 Affiche une page avec les paramètres suivant :
 - Effet sur le corps
-  - Premet de sélectionner quels sont les effets du virus
   - Permet de modifier le pourcentage de propagation en fonction du symptôme (toux)
-  - Les effets listés auront un effet sur la propagation
-  - Les effets impactant le corps, mais qui n'affectent pas la propagation, ou la vie de l'individu sont généralisés en laissant l'individu dans son foyer (réduction de chance de transmissions)
   - Les effets mortels nécessitant une hospitalisation 
 - Moyens de transmissions
-  - Permet à l'utilisateur de choisir quel mode de transmission le virus utilise ainsi que leur efficacité
   - Sont impacté par les symptômes (en incrémentant l'efficacité)
   - Sont impacté par les mesures (en décrémentant l'efficacité)
 - Durée
@@ -159,6 +161,7 @@ Affiche une page avec les paramètres suivant :
     - Permet de sélectionner une donnée au choix en X et en Y
     - Un exemple du graphique avec les données est affiché à côté de la barre de sélection
   - Plusieurs graphiques possibles à sélectionner
+- Affichage d'une "carte" permettant une visualisation plus simple
 
 ## Simulation
 Affiche une page :
