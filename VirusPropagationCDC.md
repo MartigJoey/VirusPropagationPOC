@@ -1,7 +1,7 @@
 <h1> Cahier des charges</h1>
 
 # 1. `Titre`
-Virus propagation
+Covid propagation
 # 2. `Fonctionnalités`
 - Simulation
   - Population
