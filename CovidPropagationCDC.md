@@ -48,7 +48,7 @@ Covid propagation
 # 4. Prérequis
 - C#
 - Visual studio 2019
-- Dilemne du prisonnier
+- Dilemme du prisonnier
 
 # 5. Descriptif complet du projet
 ## 5.1. Méthodologie
@@ -59,10 +59,17 @@ Simuler un grand nombre de personnes possédant toutes des variables différente
 etc...), y introduire le virus et observer sa propagation. Il est possible d’affecter des mesures de sécurité, tel que le port du masque ou la distanciation pour observer la possible réduction de la propagation.
 L'affichage permet de voir en temps réel la propagation du virus et permet de visualiser chaque individu distinctement au besoin. Des graphiques sont aussi présents pour avoir une idée en chiffres de ce que signifie
 l'affichage.
-<br><br>
-L'utilisateur a accès à de nombreux paramètres permettant de modifier la population d'individus.
-<br><br>
-Le virus peut aussi être modifié par l'utilisateur. Son niveau de létalité ainsi que son ou ses moyens de propagations peuvent être modifiés.
+
+### Graphique
+Les données des graphiques sont choisis par l'utilisateur et donc personnalisable. Plusieurs graphiques peuvent être affiché en même temps. Leur position est définie par l'utilisateur au sein de la page de l'application.<br>
+L'interface graphique est fournie par [LiveChart](https://lvcharts.net/App/examples/wpf/start). Les données sont directement fournies par l'application ainsi que les échelles de grandeurs qui sont ajustée automatiquement.
+Les graphiques à courbes et en forme camembert sont disponibles.
+
+### propagation
+
+### Population
+
+### Math
 
 # 6. Protocols de tests
 Ce projet étant en c#, je vais utiliser les tests unitaires intégrés dans visual studio.<br>
