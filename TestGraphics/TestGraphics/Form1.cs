@@ -29,20 +29,40 @@ namespace TestGraphics
                 }
             };
 
-            chart.AxisX.Add(new LiveCharts.Wpf.Axis{
+            chart.AxisX.Add(new Axis{
                 Title = "Month",
                 Labels = new[] { "Jan", "Fev", "Mar", "April", "May", "Jun", "Jan", "Fev", "Mar", "April", "May", "Jun" }
             });
 
-            chart.AxisY.Add(new LiveCharts.Wpf.Axis
+            chart.AxisY.Add(new Axis
             {
                 Title = "Nombre de cas",
                 LabelFormatter = value=>value.ToString(),
                 MinValue = 0
             });
 
-            LiveCharts.WinForms.GeoMap geoMap1 = new LiveCharts.WinForms.GeoMap();
+            //LiveCharts.WinForms.GeoMap geoMap1 = new LiveCharts.WinForms.GeoMap();
 
+            ChartValues<double> values3 = new ChartValues<double> { 50, 30, 10, 10 };
+            ChartValues<double> values4 = new ChartValues<double> { 0, 40, 10, 10 };
+            pieChart.Series = new SeriesCollection
+            {
+                new PieSeries{ Values = values3 },
+                new PieSeries{ Values = values3 },
+                new PieSeries{ Values = values4 }
+            };
+
+            pieChart.AxisX.Add(new Axis { 
+                Title = "Person",
+                Labels = new[] {"pi","e","ch","art" }
+            });
+            pieChart.AxisX.Add(new Axis
+            {
+                Title = "Virus",
+                Labels = new[] { "l", "ee", "cc", "kk" }
+            });
+
+            
             /*Dictionary<string, double> valuesMap = new Dictionary<string, double>();
             Random r = new Random();
 

@@ -31,6 +31,9 @@ namespace TestGraphics
         {
             this.chart = new LiveCharts.WinForms.CartesianChart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.pieChart = new LiveCharts.Wpf.PieChart();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart
@@ -43,12 +46,22 @@ namespace TestGraphics
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.elementHost1);
             this.groupBox1.Location = new System.Drawing.Point(690, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(777, 426);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(6, 19);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(765, 401);
+            this.elementHost1.TabIndex = 0;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.pieChart;
             // 
             // Form1
             // 
@@ -60,6 +73,7 @@ namespace TestGraphics
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -68,6 +82,8 @@ namespace TestGraphics
 
         private LiveCharts.WinForms.CartesianChart chart;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.PieChart pieChart;
     }
 }
 

@@ -1,18 +1,18 @@
-# Preuve de concept
-## matériel
+# `Preuve de concept`
+## `matériel`
 Aucun nécessaire en plus de celui déjà présent dans les postes techniciens.
-## Technologie
-### Grand nombre d'entités
+## `Technologie`
+### `Grand nombre d'entités`
 [Microsoft ASP.NET](https://docs.microsoft.com/en-us/aspnet/web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application)
 
-### Propagation
+### `Propagation`
 
 La propagation se fera entre individus se trouvant dans un même lieu. Suivant les chances d'infection qui seront définient par le virus, les mesures ainsi que par le nombre d'individus infecté dans un espace, les chances d'infection diminueront ou augmenteront à chaque itérations. 
 
 ~~SQL
 [https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx](https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx)~~
 
-Possible source de données <br>
+Source de divers données <br>
 ~~[Map](https://covid19risk.biosci.gatech.edu/)~~
 
 [Simulation de molécules](https://link.springer.com/article/10.1007/s00466-020-01881-7)
@@ -26,23 +26,24 @@ Possible source de données <br>
 Source des données mathématique concernant la propagation :
 
 [Simulation mathématique (excel) de différent lieux et paramétrable](https://drive.google.com/file/d/1ZWG4LslRBUjMC00Rsi65TKmfVJyzVUf2/view?usp=sharing)
-### Difficultées
+### `Difficultées`
 
-#### Structure
-La plus grosse difficulté du projet est d'après moi la structure de la simulation. Créer une structure cohérente et suffisamment complexe pour la simulation.
+#### `Structure`
+La plus grosse difficulté du projet est d'après moi la structure de la simulation. Créer une structure POO pour obtenir une grande variété d'objets communiquant de façon cohérente et efficace.
+La façon dont le virus se transmet, dont les personnes intéragissent, dont les environnements entre en compte dans la propagation. Tous ces éléments, si crée de façon irréfléchie, serait vite lent et difficile à comprendre.
 
-#### Calculer le nombre de reproductions
+#### `Calculer le nombre de reproductions`
 
 Calculer de réelles données telles que le nombre de reproductions et recevoir des chiffres cohérents semble aussi être une grosse difficulté.
 [Re](https://www.covid19.admin.ch/fr/repro/val)
 
-#### Interface graphique
+#### `Interface graphique`
 
 Les graphiques en eux même ne me semblent pas être un problème vu la simplicité d'utilisation, par contre, pour avoir un affichage permettant de réellement visualiser les individus ainsi que les lieus. Réaliser une version bêta ne me semble pas compliqué, mais avoir quelque chose de cohérent dans la manière de se déplacer me semble impossible dans le temps imparti par le travail de diplôme.
 
 ![Interface utilisateur](MaquetteDesign.png)
 
-### Affichage
+### `Affichage`
 
 Utilisation du framework LiveCharts.
 [Graphiques](https://lvcharts.net/App/examples/wpf/start)
@@ -51,7 +52,7 @@ Graphique radar pour le virus:
 
 [Radar](https://www.google.com/search?q=graphique+radar&tbm=isch&ved=2ahUKEwiBrPbShf3uAhVBexoKHXafBQQQ2-cCegQIABAA&oq=graphique+radar&gs_lcp=CgNpbWcQARgAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoFCAAQsQM6BAgAEEM6BAgAEAM6BAgAEApQ9h1Yrz1g8j5oAHAAeACAAXuIAdkGkgEEMTMuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=QmczYIGDG8H2afa-liA&bih=969&biw=1920&safe=strict&hl=fr)
 
-### Graphiques
+### `Graphiques`
 
 Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de créer des graphiques en courbes dynamiques. Grâce à cette extension, je peux me concentrer sur le fond en laisser la form et le graphisme de côté. Ce paquet NuGet utilise le .Net Framework 4.5.
 
@@ -59,7 +60,7 @@ Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de cr
 [Maps.xml](https://github.com/Live-Charts/Live-Maps/tree/master/Maps)~~
 ![Maps.xml](Maquette.png)
 
-# 12. Exigences
+# `Exigences`
 
 |Exigences|QQOQCCP|
 |:-------:|:-----:|
@@ -76,8 +77,8 @@ Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de cr
 |Les hôpitaux se remplissent|- **`Quoi`** ? Les individus infectés sont traités dans les hôpitaux<br>- **`Qui`** ? L'application<br>- **`Où`** ? Backend, frontend<br>- **`Quand`** ? Lorsque des maladent souffrent de certains symptômes<br>- **`Comment`** ? Simplement en assignant certains malades aux hôpitaux<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car c'est une variable importante qui peut permettre à rendre le résultat plus réaliste<br>|
 |Les hôpitaux ont une limite|- **`Quoi`** ? Les hôpitaux se remplissent jusqu'à une limite maximale et arrêtent de prendre des patients<br>- **`Qui`** ? L'application<br>- **`Où`** ? Backend, frontend<br>- **`Quand`** ? Lorsque la limite d'individus est trop grande dans un hôpital (valeur fixe)<br>- **`Comment`** ? Simplement en donnant une valeur maximale de patient par hôpital<br>- **`Combien`** ? <br>- **`Pourquoi`** ? Car les hôpitaux ne peuvent prendre un nombre infini de patients<br>|
 
-# Interactions
-## Menu principal
+# `Interactions`
+## `Menu principal`
 - Affiche un preview de l'affichage de la simulation
 - Btn Paramètres
   - Population
@@ -89,7 +90,7 @@ Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de cr
 - Btn lancer la simulation
   - Change l'affichage de la totalité de l'application, affiche une barre de chargement indiquant l'état de création de la simulation.
 
-## Population
+## `Population`
 Affiche une page avec les paramètres suivant :
 - Écoles
   - Différentes selon l'âge
@@ -145,7 +146,7 @@ Affiche une page avec les paramètres suivant :
   - Réaffiche les données précédemment affichées
 - Btn sauvegarder
   - Sauvegarde les paramètres choisis par l'utilisateur
-## Virus
+## `Virus`
 Affiche une page avec les paramètres suivant :
 - Effet sur le corps
   - Permet de modifier le pourcentage de propagation en fonction du symptôme (toux)
@@ -159,7 +160,7 @@ Affiche une page avec les paramètres suivant :
   - Permet de définir si oui ou non il y a des asymptomatiques
   - Permet de définir le pourcentage d'asymptomatiques
 
-## Affichage
+## `Affichage`
 Affiche une page avec les paramètres suivant :
 - Graphiques
   - Permet de sélectionner différents styles de graphiques à afficher
@@ -168,7 +169,7 @@ Affiche une page avec les paramètres suivant :
   - Plusieurs graphiques possibles à sélectionner
 - Affichage d'une "carte" permettant une visualisation plus simple
 
-## Simulation
+## `Simulation`
 Affiche une page :
 - Affichage d'une barre de chargement lors de la génération de la simulation
   - Évolue en fonction du nombre d'individus créé
