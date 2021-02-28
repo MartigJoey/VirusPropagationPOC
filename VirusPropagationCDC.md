@@ -94,6 +94,76 @@ Ce projet étant en c#, je vais utiliser les tests unitaires intégrés dans vis
 
 Les tests unitaires ne garantissant pas qu'il n'y ait aucun bug dans l'application, je vais créer des scénarios que je testerais avant et après chaque implémentation de fonctionnalités. Ces scénarios auront pour but de couvrir un maximum de possibilités pour éviter l'apparition de bug dû à une modification du code ou l'ajout d'une fonctionnalité. Ils permettent aussi de trouver d'éventuels des problèmes d'ergonomie en me plongeant à la place d'un utilisateur.
 
+<h1>Idées :</h1>
+<h2>Temporalité</h2>
+
+Agenda :
+- Définit par la simulation
+- Diffère en fonction de l'âge pour les jours de la semaine
+- Différent pour chaque individus les week-end
+  - En fonction du cercle d'amis et de la famille
+  - Sortie en famille
+  - Sortie entre amis
+  - Aucun
+Itération:
+- Toutes les ~30 min
+- Calcul les chances d'attraper le virus pour tous les individus de la simulation
+- Permet aux individus d'évoluer dans leur agenda
+  - Passer d'une activité à une autre
+  - Changer de lieu
+  - Arriver à destination
+  - etc...
+- 
+<h2>Paramètres individus</h2>
+
+Âge :
+- Détermine une partie de la résistance au virus
+- Le lieu auquel il se déplace les jours de semaines
+  - Aucun (Très jeune / retraité par exemple)
+  - école
+  - Travail
+Entourage :
+- Famille
+  - Contact dans le domicile
+- Amis
+  - Possible contact dans le domicile
+  - Contact extérieur
+- Collègues
+  - Contact au travail / école
+- Autres
+  - Contact dans les transports public ou en extérieur
+  - Aléatoire
+
+Moyen de transport :
+- Choisi aléatoirement en fonction des paramètres de la simulation (70% voiture, 30% transport public par exemple)
+- Voiture
+  - Très peu de risque de contagion
+  - Uniquement des connaissances en contact
+    - Famille
+    - Ami
+- Transport public
+  - Risque de contagion haut
+  - Contact avec un grand nombre d'individus
+
+Résistance au virus :
+- Définit si l'individus doit aller à l'hopital en cas d'infection ainsi que ses chances de s'en sortir.
+  - Plus ce paramètre est haut moins les effets du virus sont présents
+  - 90-100 => Asymptomatique
+  - 90-50 => symptôme normeaux
+  - 50< => hospitalisation
+  - 10< => décès 
+- Tous les individus commences entre 80 et 100 (très faible pourcentage à plus de 90 ~5%)
+  - Les maladies baissent cette valeur d'un certain pourcentage
+  - Les personnes agées sont impactées par plus de maladies infectant cette valeur.
+
+Maladie :
+- Inspirée de réel maladies
+- Leur seul effet est de baisser la résistance
+- Ne s'attrapent pas
+- Assigné au départ par la simulation
+- En plus grande quantité chez les personnes agées
+- entre 5 et 20% par maladie
+
 # 7. `Persona`
 ## 7.1. `Utilisateur experimenté`
 ![Perona experimenté](Persona_Ashley.png)
