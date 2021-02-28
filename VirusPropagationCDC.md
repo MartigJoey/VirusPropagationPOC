@@ -64,19 +64,21 @@ L'affichage permet de voir en temps réel la propagation du virus et permet de v
 l'affichage.
 
 ### 5.2.1. `Graphique`
-Les données des graphiques sont choisis par l'utilisateur et donc personnalisable. Plusieurs graphiques peuvent être affiché en même temps. Leur position est définie par l'utilisateur au sein de la page de l'application.<br>
-L'interface graphique est fournie par [LiveChart](https://lvcharts.net/App/examples/wpf/start). Les données sont directement fournies par l'application ainsi que les échelles de grandeurs qui sont ajustée automatiquement.
+Les données des graphiques sont choisies par l'utilisateur et donc personnalisable. Plusieurs graphiques peuvent être affichés en même temps. Leur position est définie par l'utilisateur au sein de la page de l'application.
+
+L'interface graphique est fournie par [LiveChart](https://lvcharts.net/App/examples/wpf/start). Les données sont directement fournies par l'application ainsi que les échelles de grandeurs qui sont ajustées automatiquement.
 Les graphiques à courbes et en forme camembert sont disponibles.
 
 ### 5.2.2. `propagation`
-La propagation se fait à l'aide de calcul et de différente variables. 1000 m^2 contenant 10 à l'intérieur aura de faible chance de transmettre le virus. Le même nombre de personnes dans un espace clos de 10 m^2 aura des résultats totalement différents.<br> 
-La température est prise est compte ainsi que les mesures tel que le masque. Le masque réduit les chances de transmettres le virus. La température elle fait varier la durée de vie du virus à l'extérieur d'un hôte.
-La complexité de ce type de calcul étant d'une difficulté largement supérieur aux compétences aquises en temps que technicien, je me base sur cette fiche excel réalisée par des professionel. Elle est très bien documentée et sourcée. 
+La propagation se fait à l'aide de calcul et de différentes variables. 1000 m<sup>2</sup> contenant 10 individus à l'intérieur aura de faibles chances de transmettre le virus. Le même nombre de personnes dans un espace clos de 10 m<sup>2</sup> aura des résultats totalement différents.
+ 
+La température est prise est compte ainsi que les mesures telles que le masque. Le masque réduit les chances de transmettre le virus. La température, elle fait varier la durée de vie du virus à l'extérieur d'un hôte.
+La complexité de ce type de calcul étant d'une difficulté largement supérieur aux compétences acquises en tant que technicien, je me base sur cette fiche Excel réalisée par des professionnels. Elle est très bien documentée et sourcée. 
 
 [Fiche excel](https://docs.google.com/spreadsheets/d/1ZWG4LslRBUjMC00Rsi65TKmfVJyzVUf2)
 
 ### 5.2.3. `Population`
-La population est constituée d'objets C# généré partiellement aléatoirement en fonction des paramètre de la simulation. Ils informent la simulation en cas de changement d'état (sain, infecté, etc...). Des itérations sont faites dans la simulation pour calculer si un individu est infecté ou non durant le temps écoulé. Il a un planning simple à suivre dans sa journée qui peut être consitituée de par exemple:
+La population est constituée d'objets C# généré partiellement, aléatoirement en fonction des paramètres de la simulation. Ils informent la simulation en cas de changement d'état (sain, infecté, etc...). Des itérations sont faites dans la simulation pour calculer si un individu est infecté ou non durant le temps écoulé. Il a un planning simple à suivre dans sa journée qui peut être constituée de par exemple :
 - Être dans son habitation
 - Prendre le bus
 - Travailler
@@ -85,11 +87,12 @@ La population est constituée d'objets C# généré partiellement aléatoirement
 - Prendre le bus
 - Et finalement rentrer chez sois
 
-Se planning est différent en fonction des individus même si vaguement le même. Durant sa journée, il croisera d'autre individu et à chaque itération il aura des chances d'être infecté si des personnes aux alentours le sont. En fonction du lieu il rencontrera des personnes différentes, parfois les même comme dans son travail où ses collègues sont fixes. Dans le bus des variations seront possibles. Son cercle d'amis ainsi que sa famille lorsqu'il se trouve dans son habitation seront les individus risquant de le contaminer.
+Ce planning est différent en fonction des individus même si vaguement le même. Durant sa journée, il croisera d'autres individus et à chaque itération, il aura des chances d'être infecté si des personnes aux alentours le sont. En fonction du lieu, il rencontrera des personnes différentes, parfois les mêmes comme dans son travail où ses collègues sont fixes. Dans le bus, des variations seront possibles. Son cercle d'amis ainsi que sa famille, lorsqu'il se trouve dans son habitation, seront les individus risquant de le contaminer.
 
 # 6. `Protocols de tests`
-Ce projet étant en c#, je vais utiliser les tests unitaires intégré dans visual studio.<br>
-Les tests unitaires ne garantissant pas qu'il n'y ai aucun bug dans l'application, je vais créer des scénarios que je testerais avant et après chaque implémentation de fonctionnalités. Ces scénarios auront pour but de couvrir un maximum de possiblités pour éviter l'appartitions de bug dû à une modification du code ou l'ajout d'une fonctionnalité. Ils permettent aussi de trouver d'éventuels des problèmes d'ergonomie en me plongeant à la place d'un utilisateur.
+Ce projet étant en c#, je vais utiliser les tests unitaires intégrés dans visual studio.
+
+Les tests unitaires ne garantissant pas qu'il n'y ait aucun bug dans l'application, je vais créer des scénarios que je testerais avant et après chaque implémentation de fonctionnalités. Ces scénarios auront pour but de couvrir un maximum de possibilités pour éviter l'apparition de bug dû à une modification du code ou l'ajout d'une fonctionnalité. Ils permettent aussi de trouver d'éventuels des problèmes d'ergonomie en me plongeant à la place d'un utilisateur.
 
 # 7. `Persona`
 ## 7.1. `Utilisateur experimenté`
