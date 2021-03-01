@@ -89,83 +89,39 @@ La population est constituée d'objets C# généré partiellement, aléatoiremen
 
 Ce planning est différent en fonction des individus même si vaguement le même. Durant sa journée, il croisera d'autres individus et à chaque itération, il aura des chances d'être infecté si des personnes aux alentours le sont. En fonction du lieu, il rencontrera des personnes différentes, parfois les mêmes comme dans son travail où ses collègues sont fixes. Dans le bus, des variations seront possibles. Son cercle d'amis ainsi que sa famille, lorsqu'il se trouve dans son habitation, seront les individus risquant de le contaminer.
 
+#### `Temporalité`
+Le quotidien des individus est défini par la simulation lors de leur création. Elles peuvent évoluer avec l'âge des individus. 
+
+Une itération est équivalente à ~30min dans la simulation. À chaque itération, chaque individu calcul ses chances d'attraper le virus en fonction de son environnement et des mesures prises. Elle permet aussi à un individu d'évoluer dans son quotidien en passant d'une tâche à une autre par exemple. Leur permettant aussi de changer de lieu et tous les événements liés à l'agenda des individus ainsi que la propagation du virus.
+
+#### `Individus`
+
+Les individus possèdent différents paramètres qui vont modifier leur quotidien ainsi que leur résistance au virus. La valeur la plus essentielle est l'âge de ces personnes. L'âge permet de contribuer à la modification de la résistance au virus. Il modifie aussi le quotidien en définissant si la personne va travailler, va à l'école, est libre de faire ce qu'il souhaite ou rien si trop jeune. L'âge évolue avec le temps de la simulation.
+
+Chaque individu a un entourage qui peut le contaminer. Il possède un cercle d'amis avec lequel il peut y avoir des contacts à domicile, et avec lequel il y aura des contacts en extérieur.
+Il a aussi une famille avec qui les contacts se font majoritairement à domicile même s'il  peut y avoir des déplacements groupés. Par exemple déposer des enfants à l'école, aller au restaurant en famille.
+Finalement, il a des collègues/camarades qui sont des contacts qui se trouve dans les écoles ou lieu de travail et qui sont ne définit pas ceux-ci.
+
+Les moyens de transport des individus sont choisis par la simulation en fonction des paramètres de celle-ci. Un individu possédant une voiture aura beaucoup moins de risque de propager le virus qu'en prenant les transports publics. Il est cependant possible que d'autres personnes du cercle familial ou du cercle d'amis utilisent le même véhicule. De ce fait, il n'est pas forcement 100% sécurisé.
+Les transports publics eux ont des risques élevés, car beaucoup de monde se situe dans le même véhicule de taille moyenne. En plus de cela, les individus sont en contact avec des étrangers qui peuvent varier en fonction des jours augmentant encore plus les chances de contagion.
+
+La résistance au virus des individus défini si la personne a des symptômes en cas d'infection, si elle est asymptomatique, ou si elle a besoin de soins. Ce paramètre est défini par pourcentage. De 100% à 90% de résistance, l'individu est asymptomatique. De 90% à 50% de résistance, l'individu a des symptômes tels que la toux. De 50% à 10% de résistance, la personne est hospitalisée. Et finalement, à moins de 10%, l'individu est hospitalisé et risque la mort.
+  - Plus ce paramètre est haut moins les effets du virus sont présents
+  - 90-100 => asymptomatiques
+  - 90-50 => symptômes normaux
+  - 50< => hospitalisations
+  - 10< => décès 
+Chaque individu créé commence avec une valeur entre 80 et 100. Sachant qu'environ 5% de ces individus ont plus de 90 de résistance. Des maladies peuvent entrer en compte et baisser la résistance naturelle. Plus l'âge est élevé, plus l'individu sera impacté par un grand nombre de maladies et celles-ci seront plus dangereuses.
+
+Les maladies sont inspirées de maladie réelle impactant l'effet du covid. Cependant, dans la simulation, elle n'affecte que la résistance au virus. Ces maladies apparaissent de façons aléatoires et plus fréquemment sur les individus dont l'âge est élevé. Elles ne se propagent pas. Elles sont en partie assignées au départ par la simulation puis apparaissent avec le temps. Elles réduisent la résistance au covid de 1% à 20% en fonction de la maladie et de l'âge de la personne.
+
 # 6. `Protocols de tests`
 Ce projet étant en c#, je vais utiliser les tests unitaires intégrés dans visual studio.
 
 Les tests unitaires ne garantissant pas qu'il n'y ait aucun bug dans l'application, je vais créer des scénarios que je testerais avant et après chaque implémentation de fonctionnalités. Ces scénarios auront pour but de couvrir un maximum de possibilités pour éviter l'apparition de bug dû à une modification du code ou l'ajout d'une fonctionnalité. Ils permettent aussi de trouver d'éventuels des problèmes d'ergonomie en me plongeant à la place d'un utilisateur.
 
-<h1>Idées :</h1>
-<h2>Temporalité</h2>
-
-Agenda :
-- Définit par la simulation
-- Diffère en fonction de l'âge pour les jours de la semaine
-- Différent pour chaque individus les week-end
-  - En fonction du cercle d'amis et de la famille
-  - Sortie en famille
-  - Sortie entre amis
-  - Aucun
-Itération:
-- Toutes les ~30 min
-- Calcul les chances d'attraper le virus pour tous les individus de la simulation
-- Permet aux individus d'évoluer dans leur agenda
-  - Passer d'une activité à une autre
-  - Changer de lieu
-  - Arriver à destination
-  - etc...
-- 
-<h2>Paramètres individus</h2>
-
-Âge :
-- Détermine une partie de la résistance au virus
-- Le lieu auquel il se déplace les jours de semaines
-  - Aucun (Très jeune / retraité par exemple)
-  - école
-  - Travail
-Entourage :
-- Famille
-  - Contact dans le domicile
-- Amis
-  - Possible contact dans le domicile
-  - Contact extérieur
-- Collègues
-  - Contact au travail / école
-- Autres
-  - Contact dans les transports public ou en extérieur
-  - Aléatoire
-
-Moyen de transport :
-- Choisi aléatoirement en fonction des paramètres de la simulation (70% voiture, 30% transport public par exemple)
-- Voiture
-  - Très peu de risque de contagion
-  - Uniquement des connaissances en contact
-    - Famille
-    - Ami
-- Transport public
-  - Risque de contagion haut
-  - Contact avec un grand nombre d'individus
-
-Résistance au virus :
-- Définit si l'individus doit aller à l'hopital en cas d'infection ainsi que ses chances de s'en sortir.
-  - Plus ce paramètre est haut moins les effets du virus sont présents
-  - 90-100 => Asymptomatique
-  - 90-50 => symptôme normeaux
-  - 50< => hospitalisation
-  - 10< => décès 
-- Tous les individus commences entre 80 et 100 (très faible pourcentage à plus de 90 ~5%)
-  - Les maladies baissent cette valeur d'un certain pourcentage
-  - Les personnes agées sont impactées par plus de maladies infectant cette valeur.
-
-Maladie :
-- Inspirée de réel maladies
-- Leur seul effet est de baisser la résistance
-- Ne s'attrapent pas
-- Assigné au départ par la simulation
-- En plus grande quantité chez les personnes agées
-- entre 5 et 20% par maladie
-
 # 7. `Persona`
-## 7.1. `Utilisateur experimenté`
+## 7.1. `Utilisateur expérimenté`
 ![Perona experimenté](Persona_Ashley.png)
 <p style="text-align: center">Figure 1: Persona experimenté</p>
 
@@ -176,22 +132,22 @@ Maladie :
 # 8. `User stories`
 ## 8.1. `Ashley`
 **En tant que** Ashley<br>
-**Je veux** comparer différentes situations avec différente personnes en prenant des mesures identiques<br>
-**Afin de** pouvoir observer les différences et déterminer quelle mesures est éfficace dans quelle situation.<br>
+**Je veux** comparer différentes situations avec différentes personnes en prenant des mesures identiques<br>
+**Afin de** pouvoir observer les différences et déterminer quelles mesures est efficaces dans quelle situation.<br>
 
 **scénarios**
-Je crée sans soucis une situtations à l'aide de l'application. Pour ce faire, j'entre différents paramètres, tel que le nombre de personnes, les mesures prisent pour limiter la transmissions ainsi que d'autres paramètres. <br>
-J'obsèrve la simulation et prend note des résultats.<br> 
-Une fois terminée, j'en lance une autres avec certains paramètres différents et prends note des résultats.<br>
+Je crée sans soucis une situation à l'aide de l'application. Pour ce faire, j'entre différents paramètres, tel que le nombre de personnes, les mesures prisent pour limiter la transmission ainsi que d'autres paramètres. <br>
+J'observe la simulation et prends note des résultats.<br> 
+Une fois terminée, j'en lance une autre avec certains paramètres différents et prends note des résultats.<br>
 Je compare les résultats avec la simulation précédente et effectue ma conclusion.
 
 ## 8.2. `Kanan`
 **En tant que** Kanan<br>
-**Je veux** vérifier l'éfficacité de différentes mesures prisent pour éviter la propagation du covid<br>
-**Afin de** afin de me donner une idée concrète et visuel de l'éfficacité de ses mesures.<br>
+**Je veux** vérifier l'efficacité de différentes mesures prisent pour éviter la propagation du covid<br>
+**Afin de** afin de me donner une idée concrète et visuelle de l'efficacité de ses mesures.<br>
 
 **scénarios**
-Je lance l'application et cherche à créer une simulation. Une fois trouvé, je peux voir les mesures qui aparaissent clairement, d'autres paramètres sont disponibles mais je n'y touches pas.<br>
+Je lance l'application et cherche à créer une simulation. Une fois trouvé, je peux voir les mesures qui apparaissent clairement, d'autres paramètres sont disponibles mais je n'y touche pas.<br>
 Une fois la simulation lancée, je vois un message m'indiquant que celle-ci commence.<br>
 Des aides sont disponibles me permettant de comprendre les données qui sont affichées. <br>
 Après avoir terminé cette simulation, j'en lance une autre en désactivant les mesures. <br>
@@ -253,7 +209,7 @@ Affiche une page avec les paramètres suivant :
   - Famille
   - Collègues
   - ...
-  - Transmissions accru
+  - Transmissions accrues
   - Rencontres inclussent dans le planning journalier des individus
 - Hôpitaux
   - Il y a plusieurs hôpitaux avec les options :
@@ -263,7 +219,7 @@ Affiche une page avec les paramètres suivant :
   - Permet de modifier le nombre d'hôpitaux
   - Permet de modifier le nombre de places
   - Stabilise les individus y étant admis
-    - Réduit leurs chances de décès
+    - Réduis leurs chances de décès
   - Nécessite du personnel qui peut être infecté pour fonctionner
     - Mesures du personnel : 
       - Permet de sélectionner plusieurs mesures
