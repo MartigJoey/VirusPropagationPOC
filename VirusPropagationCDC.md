@@ -35,13 +35,6 @@ Covid propagation
   - Informations sur le virus
     - Dangerosité
 
-## 2.1. `Fonctionnalités aditionnels`
-- Carte mondiale
-  - Transports
-    - Avions
-    - Bateaux
-    - Aéroports et ports réel
-
 # 3. `Matériel et logiciels`
 - Pc techniciens
 - Visual studio 2019
@@ -68,8 +61,14 @@ Les données des graphiques sont choisies par l'utilisateur et donc personnalisa
 
 L'interface graphique est fournie par [LiveChart](https://lvcharts.net/App/examples/wpf/start). Les données sont directement fournies par l'application ainsi que les échelles de grandeurs qui sont ajustées automatiquement.
 Les graphiques à courbes et en forme camembert sont disponibles.
+![Exemple de graphiques](Graph.png)
 
-### 5.2.2. `propagation`
+### 5.2.2. `Interface graphique`
+En plus des graphiques, une interface graphique affichant les individus ainsi que leur lieur de travail, habitation et déplacement est disponible. Elle permet d'avoir une visualisation plus naturelle de la situation. Elle est très simple car simuler une ville est une tâche trop complexe et longue pour être ajoutée au projet. Il s'agit donc d'une aide visuel simple de la simulation. Il n'y a donc pas de routes ou autres éléments complexe similaires.
+Voici deux exemples d'interface graphique :
+![Interface graphique](ExemplesInterfaceGraphique.png)
+
+### 5.2.3. `propagation`
 La propagation se fait à l'aide de calcul et de différentes variables. 1000 m<sup>2</sup> contenant 10 individus à l'intérieur aura de faibles chances de transmettre le virus. Le même nombre de personnes dans un espace clos de 10 m<sup>2</sup> aura des résultats totalement différents.
  
 La température est prise est compte ainsi que les mesures telles que le masque. Le masque réduit les chances de transmettre le virus. La température, elle fait varier la durée de vie du virus à l'extérieur d'un hôte.
@@ -77,7 +76,7 @@ La complexité de ce type de calcul étant d'une difficulté largement supérieu
 
 [Fiche excel](https://docs.google.com/spreadsheets/d/1ZWG4LslRBUjMC00Rsi65TKmfVJyzVUf2)
 
-### 5.2.3. `Population`
+### 5.2.4. `Population`
 La population est constituée d'objets C# généré partiellement, aléatoirement en fonction des paramètres de la simulation. Ils informent la simulation en cas de changement d'état (sain, infecté, etc...). Des itérations sont faites dans la simulation pour calculer si un individu est infecté ou non durant le temps écoulé. Il a un planning simple à suivre dans sa journée qui peut être constituée de par exemple :
 - Être dans son habitation
 - Prendre le bus
@@ -89,12 +88,12 @@ La population est constituée d'objets C# généré partiellement, aléatoiremen
 
 Ce planning est différent en fonction des individus même si vaguement le même. Durant sa journée, il croisera d'autres individus et à chaque itération, il aura des chances d'être infecté si des personnes aux alentours le sont. En fonction du lieu, il rencontrera des personnes différentes, parfois les mêmes comme dans son travail où ses collègues sont fixes. Dans le bus, des variations seront possibles. Son cercle d'amis ainsi que sa famille, lorsqu'il se trouve dans son habitation, seront les individus risquant de le contaminer.
 
-#### `Temporalité`
+#### 5.2.4.1. `Temporalité`
 Le quotidien des individus est défini par la simulation lors de leur création. Elles peuvent évoluer avec l'âge des individus. 
 
 Une itération est équivalente à ~30min dans la simulation. À chaque itération, chaque individu calcul ses chances d'attraper le virus en fonction de son environnement et des mesures prises. Elle permet aussi à un individu d'évoluer dans son quotidien en passant d'une tâche à une autre par exemple. Leur permettant aussi de changer de lieu et tous les événements liés à l'agenda des individus ainsi que la propagation du virus.
 
-#### `Individus`
+#### 5.2.4.2. `Individus`
 
 Les individus possèdent différents paramètres qui vont modifier leur quotidien ainsi que leur résistance au virus. La valeur la plus essentielle est l'âge de ces personnes. L'âge permet de contribuer à la modification de la résistance au virus. Il modifie aussi le quotidien en définissant si la personne va travailler, va à l'école, est libre de faire ce qu'il souhaite ou rien si trop jeune. L'âge évolue avec le temps de la simulation.
 
