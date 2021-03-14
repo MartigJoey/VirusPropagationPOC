@@ -60,6 +60,7 @@ Concernant les graphiques, j'utilise le packet NuGet LiveCharts. Il permet de cr
 [Maps.xml](https://github.com/Live-Charts/Live-Maps/tree/master/Maps)~~
 ![Maps.xml](Maquette.png)
 
+<h1>Maquettes + classes</h1>
 # `Exigences`
 
 |Exigences|QQOQCCP|
