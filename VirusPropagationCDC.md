@@ -44,7 +44,6 @@ Covid propagation
 # 4. `Prérequis`
 - C#
 - Visual studio 2019
-- Dilemne du prisonnier
 
 # 5. `Descriptif complet du projet`
 ## 5.1. `Méthodologie`
@@ -115,8 +114,14 @@ Chaque individu créé commence avec une valeur entre 80 et 100. Sachant qu'envi
 
 Les maladies sont inspirées de maladie réelle impactant l'effet du covid. Cependant, dans la simulation, elle n'affecte que la résistance au virus. Ces maladies apparaissent de façons aléatoires et plus fréquemment sur les individus dont l'âge est élevé. Elles ne se propagent pas. Elles sont en partie assignées au départ par la simulation puis apparaissent avec le temps. Elles réduisent la résistance au covid de 1% à 20% en fonction de la maladie et de l'âge de la personne.
 
-#### `Hopitaux / écoles / entreprise`
+#### 5.2.4.3. `Hopitaux / écoles / entreprise`
+Ces différents lieux fonctionnent de façon similaire. Ils ont tous des individus en leur seins qui peuvent se transmettre le virus. Ils ont des tailles différentes en fonction du nombre de personnes pouvant être à l'intérieur. 
 
+Les hôpitaux fonctionnent légérement différement. Ils ont des patients ainsi que des membres du staff de l'hopital. Il y a donc des différences de mesures et quantités. Les patients sont là de manière temporaire en fonction du nombre de personnes attrapant le covid.
+
+Les écoles ont une situation similaire en aillant des élèves ainsi que des profs qui ont des mesures et quantités différentes.
+
+Les entreprise elles fonctionnent en groupe d'individus, similaire aux classes des écoles mais sans personnel ayant des mesures différentes des autres.
 
 # 6. `Protocols de tests`
 Ce projet étant en c#, je vais utiliser les tests unitaires intégrés dans visual studio.
@@ -267,3 +272,11 @@ Affiche une page :
   - Onglets permettant de sélectionner quel graphique affiché
   - Possibilité d'afficher jusqu'à 4 graphiques sur le même onglet
 - S'actualise toutes les secondes (environ)
+
+# 13 `Livrables`
+- Mind Map
+- Planning
+- Rapport de projet
+- Manuel utilisateur
+- Journal de travail ou LogBook
+- Résumé / Abstract
