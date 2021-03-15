@@ -207,7 +207,7 @@ Affiche une page avec les paramètres suivant :
     - Affecte différemment le virus en fonction de la mesure
     - Pourrait totalement contrer un virus
   - Peut être modifier par l'utilisateur jusqu'à un niveau de 100% de protection
-  - Valeur par défaut défini par des études sur le sujet
+  - Valeur par défaut définie par des études sur le sujet
   - Appliquer uniquement sur certaines parties de la population
     - Infectés
     - Sains
@@ -218,7 +218,7 @@ Affiche une page avec les paramètres suivant :
   - Collègues
   - ...
   - Transmissions accrues
-  - Rencontres inclussent dans le planning journalier des individus
+  - Rencontres inclusent dans le planning journalier des individus
 - Hôpitaux
   - Il y a plusieurs hôpitaux avec les options :
     - Copier

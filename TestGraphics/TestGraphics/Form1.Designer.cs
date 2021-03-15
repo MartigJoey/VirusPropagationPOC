@@ -29,10 +29,12 @@ namespace TestGraphics
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.chart = new LiveCharts.WinForms.CartesianChart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.pieChart = new LiveCharts.Wpf.PieChart();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,11 +65,17 @@ namespace TestGraphics
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.pieChart;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1479, 450);
+            this.ClientSize = new System.Drawing.Size(1479, 465);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chart);
             this.Name = "Form1";
@@ -84,6 +92,7 @@ namespace TestGraphics
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.PieChart pieChart;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
